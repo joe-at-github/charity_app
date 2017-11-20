@@ -13,15 +13,16 @@ Given("they click on charity") do
 end
 
 Given("they fill in the account registration form") do
-  fill_in 'Charity name', with: 'Todos Together'
-  fill_in 'Email', with: 'todos@mail.com'
-  fill_in 'Password', with: 'todospassword'
+  fill_in 'Charity name', with: 'Oxfam'
+  fill_in 'Email', with: 'oxfam@mail.com'
+  fill_in 'Password', with: 'oxfampassword'
+  fill_in 'Password confirmation', with: 'oxfampassword'
 end
 
 When("they submit the form") do
-  click_link 'Submit'
+  page.find_button('Sign up').click
 end
 
 Then("a new account is created") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(Charity.count).to eq(1)
 end
