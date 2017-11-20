@@ -1,9 +1,9 @@
 Given("a visitor is on the welcome page") do
-  pending # Write code here that turns the phrase above into concrete actions
+  visit(root_path)
 end
 
 Given("they click on register") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(page).to have_link("Sign up")
 end
 
 Given("they fill in the account registration form") do

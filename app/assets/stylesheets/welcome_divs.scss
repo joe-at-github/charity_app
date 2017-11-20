@@ -1,0 +1,39 @@
+.welcome-divs {
+  height: 500px;
+}
+
+#welcome-div1 {
+  background-image: url('welcome_page/give_back.jpg');
+  background-size: 1024px 100%;
+}
+
+#welcome-div2 {
+  background-color: #fcfaf9;
+}
+
+#welcome-div3 {
+  background-color: #F6F6F6;
+}
+
+.logo-wrapper {
+  width: 200px;
+  height: 200px;
+  background-color: white;
+  border-radius: 51%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20% auto auto auto;
+}
+
+.logos {
+  width: 130px;
+}
+
+.logo-text-block {
+  text-align: center;
+}
+
+.side-text {
+  margin-top: 15%;
+}

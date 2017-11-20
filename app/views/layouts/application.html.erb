@@ -4,12 +4,26 @@
     <title>CharityApp</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Open+Sans', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
-   <p class="notice"><%= notice %></p>
-   <p class="alert"><%= alert %></p>
+
+
   <body>
+    <div class="topnav" id="myTopnav">
+      <nav> 
+        <%= link_to "", root_path, class: "iconicfill-home" %>
+        <%= link_to "Sign up" %>
+      </nav>
+    </div>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
     <%= yield %>
+
+    <footer>
+      ©​‌ 2017 Joeffrey Lamy
+    </footer>
   </body>
+
 </html>
