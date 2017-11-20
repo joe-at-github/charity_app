@@ -13,7 +13,7 @@ Given("they click on charity") do
   click_link 'charity'
 end
 
-Given("they fill in the account registration form") do
+Given("they fill in the charity account registration form") do
   fill_in 'Charity name', with: 'Oxfam'
   fill_in 'Email', with: 'oxfam@mail.com'
   fill_in 'Password', with: 'oxfampassword'
@@ -24,7 +24,7 @@ When("they submit the form") do
   page.find_button('Sign up').click
 end
 
-Then("a new account is created") do
+Then("a new charity account is created") do
   expect(Charity.count).to eq(1)
 end
 
@@ -32,4 +32,15 @@ end
 Given("they click on business") do
   expect(page).to have_link("business")
   click_link 'business'
+end
+
+Given("they fill in the business account registration form") do
+  fill_in 'Company name', with: 'Tesco'
+  fill_in 'Email', with: 'tesco@mail.com'
+  fill_in 'Password', with: 'tescopassword'
+  fill_in 'Password confirmation', with: 'tescopassword'
+end
+
+Then("a new business account is created") do
+  expect(Business.count).to eq(1)
 end
