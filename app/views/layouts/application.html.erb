@@ -13,11 +13,13 @@
     <div class="topnav" id="myTopnav">
       <nav> 
         <%= link_to "", root_path, class: "iconicfill-home" %>
-        <%= link_to "Sign up" %>
+        <%= link_to "Sign up", register_path %>
       </nav>
+
+      <span class="notice"><%= flash[:notice] %></span>
+      <span class="alert"><%= flash[:alert] %></span>
+
     </div>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
 
     <%= yield %>
 
