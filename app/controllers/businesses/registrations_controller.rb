@@ -1,4 +1,4 @@
-class Charities::RegistrationsController < Devise::RegistrationsController
+class Businesses::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
@@ -57,9 +57,4 @@ class Charities::RegistrationsController < Devise::RegistrationsController
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
   # end
-  
-  private
-  def sign_up_params
-    params.require(:charity).permit(:name, :email, :password, :password_confirmation)
-  end
 end

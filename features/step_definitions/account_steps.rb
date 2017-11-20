@@ -1,3 +1,4 @@
+# Scenario: A visitor can register as a charity
 Given("a visitor is on the welcome page") do
   visit(root_path)
 end
@@ -25,4 +26,10 @@ end
 
 Then("a new account is created") do
   expect(Charity.count).to eq(1)
+end
+
+# Scenario: A visitor can register as a business
+Given("they click on business") do
+  expect(page).to have_link("business")
+  click_link 'business'
 end
