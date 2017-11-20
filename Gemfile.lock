@@ -196,6 +196,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  capybara
   cucumber-rails
   database_cleaner
   jbuilder (~> 2.5)
