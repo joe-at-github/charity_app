@@ -6,3 +6,10 @@ Scenario: A charity can login
     And they filled in the charity login form
   When they submit the login form
   Then they are logged in
+
+Scenario: A business can login
+  Given there are some businesses
+    And they are on the business login page
+    And they filled in the business login form
+  When they submit the login form
+  Then they are logged in
