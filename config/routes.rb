@@ -9,10 +9,8 @@ Rails.application.routes.draw do
         registrations: 'charities/registrations'
   } 
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-
-  resource :charities
-  resource :charity_profiles
+  resources :charities
+  resources :charity_profiles
 
   root to: 'pages#home'
 
