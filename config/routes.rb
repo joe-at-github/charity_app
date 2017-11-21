@@ -9,8 +9,17 @@ Rails.application.routes.draw do
         registrations: 'charities/registrations'
   } 
 
-  resources :charities
-  resources :charity_profiles
+  # devise_scope :charity do
+  #   get 'sign_in', to: 'charities/sessions#new', as: :new_charity_session
+  #   post 'sign_in', to: 'charities/sessions#create', as: :charity_session
+  #   get 'sign_up', to: 'charities/registrations#new', as: :new_charity_registration
+  #   post 'sign_up', to: 'charities/registrations#create', as: :charity_registration
+  #   get 'password/new', to: 'devise/passwords#new', as: :new_charity_password
+  #   post 'password', to: 'devise/passwords#create'
+  # end  
+
+  resources :charities, only: [:show]
+  resources :charity_profiles, only: [:show, :new, :create]
 
   root to: 'pages#home'
 

@@ -29,11 +29,14 @@ Then("a new charity account is created") do
 end
 
 Then("they are redirected to their edit charity profile page") do
-  # save_and_open_page
+  save_and_open_page
   expect(page).to have_content('Oxfam')
   expect(page).to have_content('Please take some time to complete your profile')
-  #  flash notice
-  #  profile edit page
+  expect(page).to have_content('Description')
+  expect(page).to have_content('Street')
+  expect(page).to have_content('Postcode')
+  expect(page).to have_content('Main contact (first name)')
+  expect(page).to have_content('Main contact (last name)')
 end
 
 # Scenario: A visitor can register as a business
