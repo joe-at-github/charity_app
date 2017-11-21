@@ -1,9 +1,12 @@
 class BusinessProfilesController < ApplicationController
 
   def new
-    # binding.pry
-    @business_account = Business.find(params[:account][:account_id])
+    @account = current_business
     @profile = BusinessProfile.new
+  end
+
+  def create
+
   end
 
 end

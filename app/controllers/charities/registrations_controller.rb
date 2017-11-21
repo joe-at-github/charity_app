@@ -51,7 +51,7 @@ class Charities::RegistrationsController < Devise::RegistrationsController
   # The path used after sign up.
   def after_sign_up_path_for(resource)
     # super(resource)
-    new_charity_profile_path(account: {account_id: resource.id, account_name: resource.name})
+    new_charity_profile_path
   end
 
   # The path used after sign up for inactive accounts.
