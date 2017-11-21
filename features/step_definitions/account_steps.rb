@@ -62,4 +62,5 @@ Then("they are redirected to their new business profile page") do
   expect(page).to have_content('Street')
   expect(page).to have_content('Postcode')
   expect(page).to have_content('Main contact (first name)')
-  expect(page).to have_content('Main contact (last name)')end
+  expect(page).to have_content('Main contact (last name)')
+end

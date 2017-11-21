@@ -21,6 +21,9 @@ Rails.application.routes.draw do
   resources :charities, only: [:show]
   resources :charity_profiles, only: [:show, :new, :create]
 
+
+  resources :business_profiles, only: [:show, :new, :create]
+
   root to: 'pages#home'
 
   get '/register', to: 'pages#register'
