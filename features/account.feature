@@ -7,6 +7,7 @@ Scenario: A visitor can register as a charity
   And they fill in the charity account registration form
   When they submit the form
   Then a new charity account is created
+    And they are redirected to their edit charity profile page
 
 Scenario: A visitor can register as a business
   Given a visitor is on the welcome page

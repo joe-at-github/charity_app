@@ -28,6 +28,14 @@ Then("a new charity account is created") do
   expect(Charity.count).to eq(1)
 end
 
+Then("they are redirected to their edit charity profile page") do
+  # save_and_open_page
+  expect(page).to have_content('Oxfam')
+  expect(page).to have_content('Please take some time to complete your profile')
+  #  flash notice
+  #  profile edit page
+end
+
 # Scenario: A visitor can register as a business
 Given("they click on business") do
   expect(page).to have_link("business")
