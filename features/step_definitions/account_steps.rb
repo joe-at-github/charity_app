@@ -28,8 +28,7 @@ Then("a new charity account is created") do
   expect(Charity.count).to eq(1)
 end
 
-Then("they are redirected to their edit charity profile page") do
-  save_and_open_page
+Then("they are redirected to their new charity profile page") do
   expect(page).to have_content('Oxfam')
   expect(page).to have_content('Please take some time to complete your profile')
   expect(page).to have_content('Description')
@@ -55,3 +54,12 @@ end
 Then("a new business account is created") do
   expect(Business.count).to eq(1)
 end
+
+Then("they are redirected to their new business profile page") do
+  expect(page).to have_content('Tesco')
+  expect(page).to have_content('Please take some time to complete your profile')
+  expect(page).to have_content('Description')
+  expect(page).to have_content('Street')
+  expect(page).to have_content('Postcode')
+  expect(page).to have_content('Main contact (first name)')
+  expect(page).to have_content('Main contact (last name)')end
