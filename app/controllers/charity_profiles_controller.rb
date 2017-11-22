@@ -1,6 +1,7 @@
 class CharityProfilesController < ApplicationController
 
   before_action :find_account, only: [:new, :edit, :update]
+  before_action :find_profile, only: [:edit, :update]
 
   def new
     @profile = CharityProfile.new
@@ -11,11 +12,10 @@ class CharityProfilesController < ApplicationController
   end
 
   def edit
-    @profile = CharityProfile.find_by(charity_id: params[:id])
+    
   end
 
   def update
-    @profile = CharityProfile.find(params[:id])
     @profile.update(profile_params)
   end
 
@@ -24,11 +24,15 @@ class CharityProfilesController < ApplicationController
     @account = current_charity
   end
 
+  def find_profile
+    @profile = CharityProfile.find(params[:id])
+  end
+
   def profile_params
     params.require(:charity_profile).permit(
       :description,
       :street,
-      :postcode ,
+      :postcode,
       :contact_first_name,
       :contact_last_name
       )

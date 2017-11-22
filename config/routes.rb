@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   resources :charity_profiles, only: [:new, :create, :edit, :update]
 
 
-  resources :business_profiles, only: [:show, :new, :create]
+  resources :business_profiles, only: [:new, :create, :edit, :update]
 
   root to: 'pages#home'
 
