@@ -16,7 +16,7 @@ class BusinessProfilesController < ApplicationController
 
   def update
     @profile.update(profile_params)
-    binding.pry
+    # binding.pry
   end
 
   private
