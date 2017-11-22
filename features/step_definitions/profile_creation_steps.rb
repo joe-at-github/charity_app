@@ -13,7 +13,7 @@ end
 
 Given("they fill in the new charity profile form") do
   fill_in 'Description', with: 'Oxfam Walthamstow'
-  fill_in 'Street', with: '2-4 High St,'
+  fill_in 'Street', with: '2-4 High St'
   fill_in 'Postcode', with: 'E17 7LD'
   fill_in 'Main contact (first name)', with: 'John'
   fill_in 'Main contact (last name)', with: 'Smith'

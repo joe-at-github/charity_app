@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   # end  
 
   resources :charities, only: [:show]
-  resources :charity_profiles, only: [:show, :new, :create]
+  resources :charity_profiles, only: [:new, :create, :edit, :update]
 
 
   resources :business_profiles, only: [:show, :new, :create]
