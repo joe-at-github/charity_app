@@ -16,6 +16,7 @@ class BusinessProfilesController < ApplicationController
 
   def update
     @profile.update(profile_params)
+    binding.pry
   end
 
   private
@@ -33,7 +34,8 @@ class BusinessProfilesController < ApplicationController
       :street,
       :postcode,
       :contact_first_name,
-      :contact_last_name
+      :contact_last_name,
+      :image
       )
   end
 end

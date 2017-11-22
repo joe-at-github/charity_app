@@ -2,6 +2,11 @@
   <%= form_for @profile do |f| %>
 
     <fieldset>
+      <%= f.label :image, 'Profile image' %>
+      <%= f.file_field :image %>
+    </fieldset>    
+
+    <fieldset>
       <%= f.label :description %>
       <%= f.text_area :description, size: "60x12" %>
     </fieldset>
