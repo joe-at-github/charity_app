@@ -24,6 +24,7 @@ end
 When("they edit the edit charity profile form") do
   fill_in 'Main contact (first name)', with: 'Ben'
   fill_in 'Main contact (last name)', with: 'Hornsby'
+  attach_file("Profile image",  "features/fixtures/supplier_logo.png")
 end
 
 When("they click submit") do
@@ -33,6 +34,9 @@ end
 Then("the changes to the charity profile are saved") do
   expect(CharityProfile.last.contact_first_name).to eq('Ben')
   expect(CharityProfile.last.contact_last_name).to eq('Hornsby')
+  @profile = CharityProfile.last
+  @profile.remove_image!
+  @profile.save
 end
 
 # Scenario: A business can edit its business profile
@@ -60,9 +64,13 @@ end
 When("they edit the edit business profile form") do
   fill_in 'Main contact (first name)', with: 'Scottie'
   fill_in 'Main contact (last name)', with: 'Wenborne'
+  attach_file("Profile image",  "features/fixtures/supplier_logo.png")
 end
 
 Then("the changes to the business profile are saved") do
   expect(BusinessProfile.last.contact_first_name).to eq('Scottie')
   expect(BusinessProfile.last.contact_last_name).to eq('Wenborne')
+  @profile = BusinessProfile.last
+  @profile.remove_image!
+  @profile.save
 end 

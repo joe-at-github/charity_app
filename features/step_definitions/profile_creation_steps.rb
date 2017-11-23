@@ -17,6 +17,7 @@ Given("they fill in the new charity profile form") do
   fill_in 'Postcode', with: 'E17 7LD'
   fill_in 'Main contact (first name)', with: 'John'
   fill_in 'Main contact (last name)', with: 'Smith'
+  attach_file("Profile image",  "features/fixtures/supplier_logo.png")
 end
 
 When("they submit the new charity profile form") do
@@ -25,6 +26,9 @@ end
 
 Then("a new charity profile is created") do
   expect(CharityProfile.count).to eq(1)
+  @profile = CharityProfile.last
+  @profile.remove_image!
+  @profile.save
 end
 
 # Scenario: A business creates a business profile
@@ -47,6 +51,7 @@ Given("they fill in the new business profile form") do
   fill_in 'Postcode', with: 'E23 2PL'
   fill_in 'Main contact (first name)', with: 'Robert'
   fill_in 'Main contact (last name)', with: 'Decker'
+  attach_file("Profile image",  "features/fixtures/supplier_logo.png")
 end
 
 When("they submit the new business profile form") do
@@ -55,4 +60,7 @@ end
 
 Then("a new business profile is created") do
   expect(BusinessProfile.count).to eq(1)
+  @business = BusinessProfile.last
+  @business.remove_image!
+  @business.save
 end

@@ -34,7 +34,8 @@ class CharityProfilesController < ApplicationController
       :street,
       :postcode,
       :contact_first_name,
-      :contact_last_name
+      :contact_last_name,
+      :image
       )
   end
 end
