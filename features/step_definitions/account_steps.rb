@@ -25,7 +25,7 @@ When("they submit the form") do
 end
 
 Then("a new charity account is created") do
-  expect(Charity.count).to eq(1)
+  expect(User.count).to eq(1)
 end
 
 Then("they are redirected to their new charity profile page") do
@@ -52,7 +52,7 @@ Given("they fill in the business account registration form") do
 end
 
 Then("a new business account is created") do
-  expect(Business.count).to eq(1)
+  expect(User.count).to eq(1)
 end
 
 Then("they are redirected to their new business profile page") do
