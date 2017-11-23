@@ -1,4 +1,4 @@
-class Charities::RegistrationsController < Devise::RegistrationsController
+class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
@@ -51,7 +51,7 @@ class Charities::RegistrationsController < Devise::RegistrationsController
   # The path used after sign up.
   def after_sign_up_path_for(resource)
     # super(resource)
-    new_charity_profile_path
+    new_profile_path
   end
 
   # The path used after sign up for inactive accounts.
@@ -61,6 +61,6 @@ class Charities::RegistrationsController < Devise::RegistrationsController
   
   private
   def sign_up_params
-    params.require(:charity).permit(:name, :email, :password, :password_confirmation)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
 end
