@@ -1,4 +1,4 @@
-class BusinessProfilesController < ProfilesController
+class CharityProfilesController < ProfilesController
 
 end
   # before_action :find_account, only: [:new, :edit, :update]

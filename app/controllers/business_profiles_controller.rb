@@ -1,3 +1,3 @@
-class CharityProfilesController < ProfilesController
+class BusinessProfilesController < ProfilesController
 
 end

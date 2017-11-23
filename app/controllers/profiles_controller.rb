@@ -9,6 +9,14 @@ class ProfilesController < ApplicationController
 
   def create
     @profile = current_user.create_profile(profile_params)
+    if current_user.role == 0
+      @profile.type = "Charity"
+    elsif current_user.role == 1
+      @profile.type = "Business"
+    else
+    end
+    @profile.save
+    binding.pry     
   end
 
   def edit
