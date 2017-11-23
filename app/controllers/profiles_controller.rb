@@ -35,7 +35,8 @@ class ProfilesController < ApplicationController
       :postcode,
       :contact_first_name,
       :contact_last_name,
-      :image
+      :image,
+      :name
       )
   end
 end
