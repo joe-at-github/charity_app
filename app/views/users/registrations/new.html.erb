@@ -5,8 +5,10 @@
     <%= devise_error_messages! %>
 
     <div class="field">
-      <%= f.label :name, 'Charity name' %><br />
-      <%= f.text_field :name, autofocus: true %>
+      <%= f.radio_button(:role, 0) %>
+      <%= f.label(:role, "Charity") %>      
+      <%= f.radio_button(:role, 1) %>
+      <%= f.label(:role, "Business") %>
     </div>
 
     <div class="field">
@@ -32,6 +34,6 @@
     </div>
   <% end %>
 
-  <%= render "charities/shared/links" %>
+  <%= render "users/shared/links" %>
 
 </div>

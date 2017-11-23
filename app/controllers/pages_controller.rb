@@ -5,6 +5,7 @@ class PagesController < ApplicationController
 
 
   def register
+    redirect_to new_user_registration_path
   end
 
   def login

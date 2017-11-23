@@ -8,13 +8,8 @@ Given("they click on register") do
   click_link 'Sign up'
 end
 
-Given("they click on charity") do
-  expect(page).to have_link("charity")
-  click_link 'charity'
-end
-
 Given("they fill in the charity account registration form") do
-  fill_in 'Charity name', with: 'Oxfam'
+  choose 'user_role_0'
   fill_in 'Email', with: 'oxfam@mail.com'
   fill_in 'Password', with: 'oxfampassword'
   fill_in 'Password confirmation', with: 'oxfampassword'
@@ -29,7 +24,6 @@ Then("a new charity account is created") do
 end
 
 Then("they are redirected to their new charity profile page") do
-  expect(page).to have_content('Oxfam')
   expect(page).to have_content('Please take some time to complete your profile')
   expect(page).to have_content('Description')
   expect(page).to have_content('Street')
@@ -39,13 +33,8 @@ Then("they are redirected to their new charity profile page") do
 end
 
 # Scenario: A visitor can register as a business
-Given("they click on business") do
-  expect(page).to have_link("business")
-  click_link 'business'
-end
-
 Given("they fill in the business account registration form") do
-  fill_in 'Company name', with: 'Tesco'
+  choose 'user_role_1'
   fill_in 'Email', with: 'tesco@mail.com'
   fill_in 'Password', with: 'tescopassword'
   fill_in 'Password confirmation', with: 'tescopassword'
@@ -56,7 +45,6 @@ Then("a new business account is created") do
 end
 
 Then("they are redirected to their new business profile page") do
-  expect(page).to have_content('Tesco')
   expect(page).to have_content('Please take some time to complete your profile')
   expect(page).to have_content('Description')
   expect(page).to have_content('Street')
