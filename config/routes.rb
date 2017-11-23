@@ -1,13 +1,20 @@
 Rails.application.routes.draw do
-  devise_for :businesses, controllers: {
-        sessions: 'businesses/sessions',
-        registrations: 'businesses/registrations'
-  }
-
-  devise_for :charities, controllers: {
-        sessions: 'charities/sessions',
-        registrations: 'charities/registrations'
+  devise_for :users, controllers: {
+        sessions: 'users/sessions',
+        registrations: 'users/registrations'
   } 
+
+  resources :users, only: [:show]
+  resources :profiles, only: [:new, :create, :edit, :update]
+
+  root to: 'pages#home'
+
+  get '/register', to: 'pages#register'
+  get '/login', to: 'pages#login'
+
+end
+
+
 
   # devise_scope :charity do
   #   get 'sign_in', to: 'charities/sessions#new', as: :new_charity_session
@@ -17,16 +24,3 @@ Rails.application.routes.draw do
   #   get 'password/new', to: 'devise/passwords#new', as: :new_charity_password
   #   post 'password', to: 'devise/passwords#create'
   # end  
-
-  resources :charities, only: [:show]
-  resources :charity_profiles, only: [:new, :create, :edit, :update]
-
-
-  resources :business_profiles, only: [:new, :create, :edit, :update]
-
-  root to: 'pages#home'
-
-  get '/register', to: 'pages#register'
-  get '/login', to: 'pages#login'
-
-end
