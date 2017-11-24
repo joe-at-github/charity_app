@@ -1,10 +1,10 @@
 # Scenario: A charity can login
 Given("there are some charities") do
-  @charity = Charity.create!(name:"Oxfam", email:"oxfam@mail.com", password: "oxfampassword")
+  @charity = User.create!(email:"oxfam@mail.com", password: "oxfampassword", role: 0)
 end
 
-Given("they are on the charity login page") do
-  visit(new_charity_session_path)
+Given("they are on the login page") do
+  visit(new_user_session_path)
 end
 
 Given("they filled in the charity login form") do
@@ -22,11 +22,7 @@ end
 
 # Scenario: A business can login
 Given("there are some businesses") do
-  @business = Business.create!(name:"Tesco", email:"tesco@mail.com", password: "tescopassword")
-end
-
-Given("they are on the business login page") do
-  visit(new_business_session_path)
+  @business = User.create!(email:"tesco@mail.com", password: "tescopassword", role: 1)
 end
 
 Given("they filled in the business login form") do
