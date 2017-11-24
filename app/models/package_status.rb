@@ -1,0 +1,2 @@
+class PackageStatus < ApplicationRecord
+end
