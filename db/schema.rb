@@ -10,15 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171124194735) do
+ActiveRecord::Schema.define(version: 20171124203331) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "package_items", force: :cascade do |t|
+    t.bigint "product_id"
+    t.bigint "package_id"
+    t.integer "quantity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["package_id"], name: "index_package_items_on_package_id"
+    t.index ["product_id"], name: "index_package_items_on_product_id"
+  end
 
   create_table "package_statuses", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "packages", force: :cascade do |t|
+    t.bigint "package_status_id"
+    t.date "available_from"
+    t.date "available_until"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["package_status_id"], name: "index_packages_on_package_status_id"
   end
 
   create_table "products", force: :cascade do |t|
@@ -62,4 +81,7 @@ ActiveRecord::Schema.define(version: 20171124194735) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "package_items", "packages"
+  add_foreign_key "package_items", "products"
+  add_foreign_key "packages", "package_statuses"
 end
