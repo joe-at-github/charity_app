@@ -1,3 +1,0 @@
-class BusinessProfilesController < ProfilesController
-
-end

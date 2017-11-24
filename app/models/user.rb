@@ -5,4 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_one :profile
+
+  validates :role, inclusion: { in: [0, 1] }
 end
