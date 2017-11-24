@@ -19,7 +19,6 @@ Given("they fill in the new charity profile form") do
   fill_in 'Main contact (first name)', with: 'John'
   fill_in 'Main contact (last name)', with: 'Smith'
   attach_file("Profile image",  "features/fixtures/supplier_logo.png")
-  save_and_open_page
 end
 
 When("they submit the new profile form") do
@@ -28,10 +27,11 @@ end
 
 Then("a new profile is created") do
   expect(Profile.count).to eq(1)
-  # expect(Profile.last.type).to eq('charity')
   @profile = Profile.last
-  @profile.remove_image!
-  @profile.save
+end
+
+Then("it the type is charity") do
+  expect(Profile.last.type).to eq('CharityProfile')
 end
 
 # Scenario: A business creates a business profile
@@ -60,4 +60,8 @@ end
 
 When("they submit the new business profile form") do
   page.find_button('submit').click
+end
+
+Then("it the type is business") do
+  expect(Profile.last.type).to eq('BusinessProfile')
 end
