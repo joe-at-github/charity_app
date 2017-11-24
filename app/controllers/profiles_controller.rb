@@ -14,7 +14,7 @@ class ProfilesController < ApplicationController
     else current_user.role == 1
       @profile.type = "BusinessProfile"
     end
-    @profile.save   
+    @profile.save  
   end
 
   def edit

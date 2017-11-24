@@ -3,4 +3,5 @@ class Profile < ApplicationRecord
   mount_uploader :image, ImageUploader
 
   validates :type, inclusion: { in: ["CharityProfile", "BusinessProfile"] }
+  validates :name, presence: true
 end
