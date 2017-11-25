@@ -2,7 +2,8 @@ Feature: A business can create a package
 
 Background: 
   Given there are some businesses
-    And they are logged in
+    And they have a business profile
+    And the business is logged in
 
 Scenario: A bussiness create a package and add a food product
   Given they are on the product index

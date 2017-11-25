@@ -1,5 +1,8 @@
 Given("they are on the product index") do
   visit products_path
+  save_and_open_page
+  expect(page).to have_content('Chocolate bar')
+  expect(page).to have_content('Sleeping bag')
 end
 
 Given("they click on food product category") do
@@ -7,7 +10,8 @@ Given("they click on food product category") do
 end
 
 Given("they click on a food product") do
-  click_link 'chocolate bar'
+  expect(page).to_not have_content('Sleeping bag')
+  click_link 'Chocolate bar'
 end
 
 When("they fill in the food product form") do

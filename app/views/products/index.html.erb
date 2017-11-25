@@ -1,0 +1,16 @@
+<h3 class="centered-text">Products needed by charities</h3>
+
+<div class="centered-text">
+  <%= link_to "All", products_path  %>
+  <%= link_to "Food", products_path(category: "Food"), method: :get  %>
+  <%= link_to "Else", products_path(category: "Else"), method: :get  %>
+</div>
+
+<div class="product-wrapper">
+  <% @products.each do |product| %>
+
+  <div class="product-box centered-text" >
+    <%= product.name %>
+  </div>
+  <% end %>
+</div>
