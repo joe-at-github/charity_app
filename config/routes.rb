@@ -7,8 +7,9 @@ Rails.application.routes.draw do
   get '/login', to: 'pages#login'
   
   resources :profiles, only: [:new, :create, :edit, :update]
+  resources :products, only: [:index]
   resource :package, only: [:show]
-  resources :order_items, only: [:create, :update, :destroy]
+  resources :package_items, only: [:create, :update, :destroy]
   
   devise_for :users, controllers: {
         sessions: 'users/sessions',
