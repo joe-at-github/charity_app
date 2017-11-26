@@ -1,9 +1,12 @@
 class PackageItemsController < ApplicationController
   def create
     @package = current_package
+    @package.package_status_id = 6
     @package_item = @package.package_items.new(package_item_params)
     @package.save
     session[:package_id] = @package.id
+    redirect_to products_path
+    binding.pry
   end
 
   def update
@@ -22,6 +25,6 @@ class PackageItemsController < ApplicationController
   
   private
   def package_item_params
-    params.require(:package_item).permit(:quantity, :product_id)
+    params.require(:package_item).permit(:quantity, :product_id, :expiration_date)
   end
 end

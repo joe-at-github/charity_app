@@ -1,10 +1,17 @@
 <h3 class="centered-text">Products needed by charities</h3>
 
+<div class="centered-text" id="package-summary">
+  <h3>
+    Package summary div
+  </h3>
+  <div id="add-product-form">
+  </div>
+</div>
+
 <div class="centered-text">
   <%= link_to "All", products_path  %>
   <%= link_to "Food", products_path(category: "Food"), method: :get  %>
   <%= link_to "Else", products_path(category: "Else"), method: :get  %>
-  <%= link_to "Add product form", package_item_form_products_path, id: "product-form", format: :script, remote: true %>
 </div>
 
 <div class="product-wrapper">
@@ -12,16 +19,8 @@
 
 
   <div class="product-box centered-text" >
-    <%= link_to product.name, package_item_form_products_path, class: "product-links", remote: true %>
+    <%= link_to product.name, package_item_form_products_path(product_id: product.id), class: "product-links", remote: true %>
   </div>
 
   <% end %>
-</div>
-
-<div class="centered-text" id="package-summary">
-  <h3>
-    Package summary div
-  </h3>
-  <div id="add-product-form">
-  </div>
 </div>

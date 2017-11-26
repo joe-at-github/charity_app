@@ -1,1 +1,21 @@
-<h4>New package item form</h4>
+<h4>Add this product: </h4>
+
+<%= form_for @package_item do |f| %>
+
+<%= f.hidden_field :product_id, value: params[:product_id].to_i %>
+
+<fieldset>
+  <%= f.label :quantity %>
+  <%= f.text_field :quantity %>
+</fieldset>
+
+<fieldset>
+  <%= f.label :expiration_date %>
+  <%= f.text_field :expiration_date %>
+</fieldset>
+
+<fieldset>
+  <%= f.submit "Add to package" %>
+</fieldset>
+
+<% end %>

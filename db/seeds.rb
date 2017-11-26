@@ -6,12 +6,16 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+PackageItem.delete_all
+Package.delete_all
+
 PackageStatus.delete_all
 PackageStatus.create! id: 1, name: "Available"
 PackageStatus.create! id: 2, name: "In approval"
 PackageStatus.create! id: 3, name: "Assigned"
 PackageStatus.create! id: 4, name: "Cancelled"
 PackageStatus.create! id: 5, name: "Collected"
+PackageStatus.create! id: 6, name: "On hold"
 
 Product.delete_all
 Product.create! id: 1, name: "Banana", category: "Food"

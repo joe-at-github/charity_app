@@ -11,6 +11,8 @@ end
 Given("they click on a food product") do
   expect(page).to_not have_content('Sleeping bag')
   click_link 'Chocolate bar'
+  click_link 'Chocolate bar'
+  save_and_open_page
 end
 
 When("they fill in the food product form") do
