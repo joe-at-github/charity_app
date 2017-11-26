@@ -1,6 +1,5 @@
 Given("they are on the product index") do
   visit products_path
-  save_and_open_page
   expect(page).to have_content('Chocolate bar')
   expect(page).to have_content('Sleeping bag')
 end

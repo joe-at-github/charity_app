@@ -7,7 +7,13 @@ Rails.application.routes.draw do
   get '/login', to: 'pages#login'
   
   resources :profiles, only: [:new, :create, :edit, :update]
-  resources :products, only: [:index]
+  resources :products, only: [:index] do
+    collection do
+      get :package_item_form
+    end
+  end
+
+
   resource :package, only: [:show]
   resources :package_items, only: [:create, :update, :destroy]
   

@@ -1,0 +1,3 @@
+document.getElementById('product-form').addEventListener('click', function() {
+  document.getElementById('add-product-form').innerHTML = '<%= j(render :template => "products/package_item_form.html") %>';
+});
