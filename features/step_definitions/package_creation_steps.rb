@@ -11,12 +11,10 @@ end
 Given("they click on a food product") do
   expect(page).to_not have_content('Sleeping bag')
   click_link 'Chocolate bar'
-  click_link 'Chocolate bar'
-  save_and_open_page
 end
 
 When("they fill in the food product form") do
-  fill_in 'Expiriation date', with: '2018-11-01'
+  fill_in 'Expiration date', with: '2018-11-01'
   fill_in 'Quantity', with: 100
 end
 
@@ -29,5 +27,5 @@ Then("a package is created") do
 end
 
 Then("the product has been added") do
-  expect(Package.last.package_item.count).to eq(1)
+  expect(Package.last.package_items.count).to eq(1)
 end

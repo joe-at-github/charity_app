@@ -1,7 +1,8 @@
 <h3>
   Package summary
+
 </h3>
-<% if !current_package == nil %>
+<% unless current_package.id.nil? %>
 <p>
   Package number: <%= current_package.id %>
 </p>
@@ -15,6 +16,13 @@
 </p>
 
 <%= link_to "Finalize", edit_package_path %>
+
+
+<% else %>
+
+<p>Start creating a package by selecting a product !</p>
+
+
 <% end %>
    
 
