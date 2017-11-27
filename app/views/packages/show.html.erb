@@ -1,16 +1,28 @@
-<h1>Packages#show</h1>
+<h2>Packages#show</h2>
 <h3>
-  Package summary
+  Package information
+</h3>
+
+<p> 
+  Status: <%= current_package.package_status.name %> 
+</p>
+
+<p>
+  Ref. : <%=current_package.id %>
+</p>
+
+<p>
+  Number of items : <%=current_package.package_items.count %>
+</p>
+
+<h3>
+  Package content
 </h3>
 
 <% current_package.package_items.each do |p| %>
 
-  Package number: <% current_package.id %>
-  Package status: <% current_package.package_status.name %>
-
 <ul>
   <li><%= p.product.name %> (<%= p.quantity %>)</li>
-  <% binding.pry %>
 </ul>
 
 <% end %>

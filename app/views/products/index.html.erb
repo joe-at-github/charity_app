@@ -1,7 +1,10 @@
-
 <div class="centered-text" id="package-summary">
-  <%= render partial: 'products/package_summary' %>
+  <%= render partial: 'packages/package_summary' %>
  
+ <div class="centered-text">
+  <%= link_to "Review and finalize", edit_package_path(current_package) %>
+ </div>
+
   <div id="add-product-form">
   </div>
 </div>

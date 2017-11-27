@@ -1,0 +1,42 @@
+<h2 class="centered-text">Review and finalize your package here</h2 class="centered-text">
+
+<div class="centered-text" id="package-summary">
+  <%= render partial: 'packages/package_summary' %>
+<div id="add-product-form">
+
+
+<%= form_for @package do |package_form| %>
+
+  
+  <%= package_form.fields_for :package_items do |item_fields| %>
+
+      <fieldset>
+        <%= item_fields.object.product.name %>
+      </fieldset>
+
+      <fieldset>
+        <%= item_fields.label :quantity %>
+        <%= item_fields.text_field :quantity %>
+      </fieldset>
+
+      <% if item_fields.object.product.category == "Food" %>
+        <fieldset>
+          <%= item_fields.label :expiration_date %>
+          <%= item_fields.text_field :expiration_date %>
+        </fieldset>
+      <% end %>
+
+
+    <p></p>
+  <% end %>
+
+  <fieldset>
+    <%= package_form.submit 'Update' %>
+  </fieldset>   
+    
+
+
+<% end %>
+<p></p>
+<%= link_to "Finalize" %>
+

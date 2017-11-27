@@ -4,7 +4,7 @@ Feature: A business can create a package
     Given there are some businesses
       And they have a business profile
       And the business is logged in
-      
+
   @javascript
   Scenario: A bussiness create a package and add a food product
     Given they are on the product index
@@ -14,3 +14,13 @@ Feature: A business can create a package
       And click add to package
     Then a package is created
       And the product has been added
+
+  @javascript
+  Scenario: A bussiness can review and finalize the package 
+    Given the business is on the products page
+      And a there is a current package
+      And click Review and finalize
+      And edit the review package form
+    When they submit modification to the package
+    Then the package is updated
+      And they are redicted to their packages index page
