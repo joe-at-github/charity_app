@@ -9,10 +9,12 @@
   <%= f.text_field :quantity %>
 </fieldset>
 
+<% if @product.category == "Food" %>
 <fieldset>
   <%= f.label :expiration_date %>
-  <%= f.text_field :expiration_date %>
+  <%= f.date_field :expiration_date %>
 </fieldset>
+<% end %>
 
 <fieldset>
   <%= f.submit "Add to package" %>

@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   end
 
 
-  resource :package, only: [:show]
+  resource :package, only: [:show, :edit]
   resources :package_items, only: [:create, :update, :destroy]
   
   devise_for :users, controllers: {

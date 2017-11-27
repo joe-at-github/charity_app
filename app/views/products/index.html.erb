@@ -1,13 +1,12 @@
-<h3 class="centered-text">Products needed by charities</h3>
 
 <div class="centered-text" id="package-summary">
-  <h3>
-    Package summary div
-  </h3>
+  <%= render partial: 'products/package_summary' %>
+ 
   <div id="add-product-form">
   </div>
 </div>
 
+<h3 class="centered-text">Products needed by charities</h3>
 <div class="centered-text">
   <%= link_to "All", products_path  %>
   <%= link_to "Food", products_path(category: "Food"), method: :get  %>

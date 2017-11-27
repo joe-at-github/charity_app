@@ -6,7 +6,6 @@ class PackageItemsController < ApplicationController
     @package.save
     session[:package_id] = @package.id
     redirect_to products_path
-    binding.pry
   end
 
   def update

@@ -1,0 +1,23 @@
+<h3>
+  Package summary
+</h3>
+<% if !current_package == nil %>
+<p>
+  Package number: <%= current_package.id %>
+</p>
+
+<p>
+  Package status: <%= current_package.package_status.name %>
+</p>
+
+<p>
+  Number of items: <%= current_package.package_items.count %>
+</p>
+
+<%= link_to "Finalize", edit_package_path %>
+<% end %>
+   
+
+   
+
+

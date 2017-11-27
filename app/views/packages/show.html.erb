@@ -1,2 +1,18 @@
 <h1>Packages#show</h1>
-<p>Find me in app/views/packages/show.html.erb</p>
+<h3>
+  Package summary
+</h3>
+
+<% current_package.package_items.each do |p| %>
+
+  Package number: <% current_package.id %>
+  Package status: <% current_package.package_status.name %>
+
+<ul>
+  <li><%= p.product.name %> (<%= p.quantity %>)</li>
+  <% binding.pry %>
+</ul>
+
+<% end %>
+    
+
