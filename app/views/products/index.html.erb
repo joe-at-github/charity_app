@@ -2,7 +2,9 @@
   <%= render partial: 'packages/package_summary' %>
  
  <div class="centered-text">
-  <%= link_to "Review and finalize", edit_package_path(current_package) %>
+  <% if !current_package.id.nil? %>
+    <%= link_to "Review and finalize", edit_package_path(current_package) %>
+  <% end %>
  </div>
 
   <div id="add-product-form">

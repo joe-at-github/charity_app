@@ -41,11 +41,6 @@ Given("a there is a current package") do
   fill_in 'Expiration date', with: '2018-11-01'
   fill_in 'Quantity', with: 100
   page.find_button('Add to package').click 
-
-  click_link 'Coffee'
-  fill_in 'Expiration date', with: '2019-06-01'
-  fill_in 'Quantity', with: 5
-  page.find_button('Add to package').click  
 end
 
 Given("click Review and finalize") do
@@ -53,22 +48,25 @@ Given("click Review and finalize") do
 end
 
 Given("edit the review package form") do
-  save_and_open_page
-  expect(page).to have_content('Chocolate bar')
-  expect(page).to have_content('100')
-  expect(page).to have_content('Coffee')
-  expect(page).to have_content(5)
+  expect(page).to have_field('Quantity', with: '100')
   expect(page).to have_content('On hold')
 end
 
 When("they submit modification to the package") do
-  pending # Write code here that turns the phrase above into concrete actions
+  fill_in 'Expiration date', with: '2019-02-01'
+  fill_in 'Quantity', with: 500
+  click_button 'Update'
 end
 
 Then("the package is updated") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(Package.last.package_items.first.quantity).to eq(500)
 end
 
-Then("they are redicted to their packages index page") do
-  pending # Write code here that turns the phrase above into concrete actions
+Then("they are redicted to their business profile page") do
+  expect(page).to have_content(@business.profile.name)
+  expect(page).to have_content('Chocolate bar')
+  save_and_open_page
+  # include conditional logic or  a filer to show packages belonging the user
+  # need to create association for user and package
+
 end

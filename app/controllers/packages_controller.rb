@@ -12,7 +12,7 @@ class PackagesController < ApplicationController
     @package = current_package
     @package.update_attributes(package_params)
 
-    redirect_to package_path
+    redirect_to business_profile_path
   end
 
   private

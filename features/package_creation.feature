@@ -23,4 +23,4 @@ Feature: A business can create a package
       And edit the review package form
     When they submit modification to the package
     Then the package is updated
-      And they are redicted to their packages index page
+      And they are redicted to their business profile page
