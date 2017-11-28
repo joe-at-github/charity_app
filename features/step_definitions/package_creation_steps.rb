@@ -63,10 +63,7 @@ Then("the package is updated") do
 end
 
 Then("they are redicted to their business profile page") do
+  save_and_open_page
   expect(page).to have_content(@business.profile.name)
   expect(page).to have_content('Chocolate bar')
-  save_and_open_page
-  # include conditional logic or  a filer to show packages belonging the user
-  # need to create association for user and package
-
 end

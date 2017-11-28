@@ -10,5 +10,18 @@
 </div>
 
 <div class="packages">
-
+  <table>
+    <thead><th>Package ref.</th><th>Content</th><th>Nb. of items</th></thead>
+    <tbody>
+      <% @packages.each do |p| %>
+        <tr>
+          <td> <%= link_to p.id, package_path(p.id) %> </td>
+          <% p.package_items.each do |i| %>
+          <td> <%= i.product.name %> </td>
+          <% end%>
+          <td> <%= p.package_items.count %> </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>

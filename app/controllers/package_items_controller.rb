@@ -1,4 +1,5 @@
 class PackageItemsController < ApplicationController
+  
   def create
     @package = current_package
     @package.update(package_status_id: 6, business_profile_id: current_user.profile.id)
