@@ -6,12 +6,16 @@
 
 <div class="packages">
   <table>
-    <thead><th>Package ref.</th><th></th><th>Nb. of items</th><th></th><th>Content</th></thead>
+    <thead><th>Package ref.</th><th></th><th>Nb. of items</th><th></th><th>Status</th><th></th><th>Availability</th><th>Content</th></thead>
     <tbody>
       <% @packages.each do |p| %>
         <tr>
-          <td> <%= link_to p.id, package_path(p.id) %> </td><td></td>
-          <td> <%= p.package_items.count %> </td><td></td>
+          <td> <%= link_to p.id, package_path(package_id:p.id) %> </td><td></td>
+          <td> <%= p.package_items.count %> </td>
+          <td></td>
+          <td><%= p.package_status.name %></td>
+          <td></td>
+          <td><%= "#{p.available_from} - #{p.available_until}" %></td>
           <td>
             <% p.package_items.each do |i| %>
                 <%= i.product.name %> 

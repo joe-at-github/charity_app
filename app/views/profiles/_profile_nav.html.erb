@@ -9,7 +9,12 @@
 
   <div class="profile-navbar">
     <%= link_to "Edit your profile", edit_profile_path(current_user) %>
-    <%= link_to "Create package", products_path%>
+    <% if session["package_id"].nil? %>
+      <%= link_to "Create package", products_path%>
+    <% elsif current_page?(business_profile_path(current_user)) %>
+      <%= link_to "Go back to current package", products_path%>
+    <% end %>
+
     <%= link_to "Review existing packages", business_profile_path(current_user) %>
   </div>
 

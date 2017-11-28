@@ -6,7 +6,6 @@ class ProductsController < ApplicationController
   before_action :user_with_profile_only, only: [:index]
 
   def index
-    # binding.pry
     params[:category]? @filter = Filter.new(filter_params) : @filter = Filter.new
     @products = @filter.product_list
     @package_item = current_package.package_items.new
@@ -17,6 +16,7 @@ class ProductsController < ApplicationController
     @products = @filter.product_list
     @package_item = current_package.package_items.new
     @product = Product.find(params[:product_id])
+    
     respond_to do |format|
       format.html
       format.js

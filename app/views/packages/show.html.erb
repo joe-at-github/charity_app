@@ -1,25 +1,16 @@
-<h2>Packages#show</h2>
 <h3>
   Package information
 </h3>
 
-<p> 
-  Status: <%= current_package.package_status.name %> 
-</p>
+<p>Status: <%= @package.package_status.name %></p>
 
-<p>
-  Ref. : <%=current_package.id %>
-</p>
+<p>Ref. : <%=@package.id %></p>
 
-<p>
-  Number of items : <%=current_package.package_items.count %>
-</p>
+<p>Number of items : <%=@package.package_items.count %></p>
 
-<h3>
-  Package content
-</h3>
+<h3>Package content</h3>
 
-<% current_package.package_items.each do |p| %>
+<% @package.package_items.each do |p| %>
 
 <ul>
   <li><%= p.product.name %> (<%= p.quantity %>)</li>

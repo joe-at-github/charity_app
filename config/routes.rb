@@ -15,7 +15,11 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :packages, only: [:index, :show, :edit, :update]
+  resources :packages, only: [:index, :show, :edit, :update] do
+    collection do
+      get :finalize
+    end
+  end
   
   resources :package_items, only: [:create]
   
