@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get '/register', to: 'pages#register'
   get '/login', to: 'pages#login'
   
-  resources :profiles, only: [:new, :create, :edit, :update]
+  resources :profiles, only: [:new, :create, :edit, :update, :show]
   
   resources :business_profiles, only: [:show]
 

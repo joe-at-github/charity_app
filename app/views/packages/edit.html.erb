@@ -31,6 +31,16 @@
   <% end %>
 
   <fieldset>
+    <%= package_form.label :available_from %>
+    <%= package_form.date_field :available_from %>
+  </fieldset>    
+
+  <fieldset>
+    <%= package_form.label :available_until %>
+    <%= package_form.date_field :available_until %>
+  </fieldset>    
+
+  <fieldset>
     <%= package_form.submit 'Update' %>
   </fieldset>   
     

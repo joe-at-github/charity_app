@@ -6,15 +6,17 @@
 
 <div class="packages">
   <table>
-    <thead><th>Package ref.</th><th>Content</th><th>Nb. of items</th></thead>
+    <thead><th>Package ref.</th><th></th><th>Nb. of items</th><th></th><th>Content</th></thead>
     <tbody>
       <% @packages.each do |p| %>
         <tr>
-          <td> <%= link_to p.id, package_path(p.id) %> </td>
-          <% p.package_items.each do |i| %>
-          <td> <%= i.product.name %> </td>
-          <% end%>
-          <td> <%= p.package_items.count %> </td>
+          <td> <%= link_to p.id, package_path(p.id) %> </td><td></td>
+          <td> <%= p.package_items.count %> </td><td></td>
+          <td>
+            <% p.package_items.each do |i| %>
+                <%= i.product.name %> 
+            <% end%>
+          </td>
         </tr>
       <% end %>
     </tbody>

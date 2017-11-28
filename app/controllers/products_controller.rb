@@ -3,6 +3,7 @@ require 'filter.rb'
 class ProductsController < ApplicationController
 
   before_action :signed_in_business_only, only: [:index]
+  before_action :user_with_profile_only, only: [:index]
 
   def index
     # binding.pry

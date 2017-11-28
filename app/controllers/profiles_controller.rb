@@ -21,8 +21,13 @@ class ProfilesController < ApplicationController
     
   end
 
+  def show
+    @profile = current_user.profile
+  end
+
   def update
     @profile.update(profile_params)
+    redirect_to profile_path
   end
 
   private

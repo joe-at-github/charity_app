@@ -26,7 +26,7 @@
       <% if current_user %>
         <% if current_user.profile.nil? %>
           <%= render partial: 'profiles/no_profile_nav' %>
-        <% else %>
+        <% elsif !current_user.profile.nil? %>
           <%= render partial: 'profiles/profile_nav'  %>
         <% end %>
       <% end %>
