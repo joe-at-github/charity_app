@@ -1,0 +1,15 @@
+<% if current_user.role == 0 %>
+
+  <div class="profile-navbar">
+    <%= link_to "View available package", packages_path%>
+    <%= link_to "Edit your profile", edit_profile_path %>
+  </div>
+
+<% else %>
+
+  <div class="profile-navbar">
+    <%= link_to "Create package", products_path%>
+    <%= link_to "Edit your profile", edit_profile_path %>
+  </div>
+
+<% end %>
