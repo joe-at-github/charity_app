@@ -15,8 +15,18 @@
         <%= link_to "", root_path, class: "iconicfill-home" %>
         <%= link_to "Sign up", register_path %>
         <%= link_to "Log in", login_path %>
+        <%= link_to "Log out", destroy_user_session_path %>
       </nav>
     </div>
+
+      <% if current_user %>
+        <% if current_user.profile.nil? %>
+          <%= render partial: 'profiles/no_profile_nav' %>
+        <% else %>
+          <%= render partial: 'profiles/profile_nav'  %>
+        <% end %>
+      <% end %>
+
       <span class="notice"><%= flash[:notice] %></span>
       <span class="alert"><%= flash[:alert] %></span>
 
