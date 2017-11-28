@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
     if !session[:package_id].nil?
       Package.find(session[:package_id])
     else
-      Package.new(package_status_id: 6)
+      Package.new
     end
   end
 end
