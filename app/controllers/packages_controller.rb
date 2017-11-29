@@ -1,9 +1,16 @@
 class PackagesController < ApplicationController
   
+  before_action :get_coordinates, only: [:finalize]
+
   def index
-    
+    @packages = Package.where(package_status_id: 1)
+    # binding.pry
+    respond_to do |format|
+      format.html
+      format.json { render :json => @packages.where("latitude is not null AND longitude is not null").as_json(:only => [:id, :latitude, :longitude]) }
+    end
   end
-  
+
   def show
    @package_items = current_package.package_items
    @package = Package.find(params[:package_id])
@@ -43,6 +50,13 @@ class PackagesController < ApplicationController
   private
   def package_params
     params.require(:package).permit(:id, :available_from, :available_until, :package_items_attributes => [:id, :quantity, :expiration_date])
+  end
+
+  def get_coordinates
+    # binding.pry
+    current_package.update(latitude: current_user.profile.latitude)
+    current_package.update(longitude: current_user.profile.longitude)
+    # binding.pry
   end
 
 end

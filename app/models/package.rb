@@ -10,7 +10,6 @@ class Package < ApplicationRecord
   belongs_to :business_profile
   belongs_to :charity_profile, optional: true
 
-
   # private
   # def set_package_status
   #   self.package_status_id = 6
