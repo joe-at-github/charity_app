@@ -23,7 +23,8 @@
 
 
   <div class="product-box centered-text" >
-    <%= link_to product.name, package_item_form_products_path(product_id: product.id), class: "product-links", remote: true %>
+    <%= link_to(image_tag("#{product.name}.jpg", class: "product-links"), package_item_form_products_path(product_id: product.id), remote: true) %>
+    <%= product.name %>
   </div>
 
   <% end %>
