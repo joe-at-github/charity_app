@@ -1,5 +1,9 @@
 class PackagesController < ApplicationController
   
+  def index
+    
+  end
+  
   def show
    @package_items = current_package.package_items
    @package = Package.find(params[:package_id])
