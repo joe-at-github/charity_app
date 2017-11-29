@@ -7,13 +7,20 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.delete_all
-User.create! id: 1, email: "business@mail.com", role: 1, password: "businesspassword"
+User.create! id: 1, email: "business1@mail.com", role: 1, password: "business1password"
+User.create! id: 2, email: "business2@mail.com", role: 1, password: "business2password"
+User.create! id: 3, email: "business3@mail.com", role: 1, password: "business3password"
+User.create! id: 4, email: "charity@mail.com", role: 0, password: "charitypassword"
 
 Profile.delete_all
-Profile.create! id: 1, user_id: 1, description: "We believe in sharing.", street: "13 Fletcher drive", postcode: "L19 8BX", contact_first_name: "John", contact_last_name: "Smith", name: "The Good company", type: "BusinessProfile"
+Profile.create! id: 1, user_id: 1, description: "We believe in sharing.", street: "640 High Rd", postcode: "E11 3AA", contact_first_name: "John", contact_last_name: "Stewart", name: "The Good Company", type: "BusinessProfile", latitude: 51.5679329, longitude: 0.0110347
+Profile.create! id: 2, user_id: 2, description: "We believe in sharing too.", street: "High Road,", postcode: "E11 4RE", contact_first_name: "Trevor", contact_last_name: "Noah", name: "The Even Nicer Company", type: "BusinessProfile", latitude: 51.5639009, longitude: 0.0096186
+Profile.create! id: 3, user_id: 3, description: "We believe in sharing too.", street: "118B Hainault Road,", postcode: "E11 1EL", contact_first_name: "Mike", contact_last_name: "Griffin", name: "The Genuine Company", type: "BusinessProfile", latitude: 51.571685, longitude: 0.001622
+Profile.create! id: 4, user_id: 4, description: "We like people who share.", street: "The Green", postcode: "E11 2NT", contact_first_name: "Stephen", contact_last_name: "Colbert", name: "A Great Charity", type: "CharityProfile", latitude: 51.574984, longitude:0.028706
 
 PackageItem.delete_all
 Package.delete_all
+# Package.create! id:1, package_status_id: 1, available_from: "2017-12-01", available_until: "2017-12-23", business_profile_id: 1
 
 PackageStatus.delete_all
 PackageStatus.create! id: 1, name: "Available"

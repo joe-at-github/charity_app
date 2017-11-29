@@ -1,7 +1,9 @@
 <h3 class="centered-text">Available packages near you</h3>
 
-<button id="reveal" onclick="setMarkers()" class="button">Why's that?</button>
-<div id="ajax"></div>
+<div id="center-point" class="hidden">
+  <%= @center_point %>
+</div>
+
 <div id="map"></div>
 <script async defer
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4BbgHnh78irmM69MNOrOC8GqGkP8aIdw&callback=initMap">

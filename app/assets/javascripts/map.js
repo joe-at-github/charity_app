@@ -1,10 +1,12 @@
 function initMap() {
-  var centerPoint = {lat: 51.5666463, lng: 0.0023584};
+  // var centerPoint = {lat: 51.5666463, lng: 0.0023584};
+  
+  // setCenterPoint(centerPoint);
 
   var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 14,
     mapTypeId: 'terrain',
-    center: centerPoint
+    center: setCenterPoint()
   });
 
   setMarkers(map);
@@ -22,11 +24,9 @@ function getMarkersCoordinates(map) {
     if (myRequest.readyState === 4) {
       var markersCoordinates = JSON.parse(myRequest.responseText)
       drawMarker(markersCoordinates, map);
-      // debugger
     }
   }
 } 
-
 
 function drawMarker(markersCoordinates, map) {  
   for (var i = 0; i < markersCoordinates.length; i++) {
@@ -39,3 +39,8 @@ function drawMarker(markersCoordinates, map) {
   }
 }
 
+function setCenterPoint() {
+  var coordinates = JSON.parse(document.getElementById('center-point').innerHTML);
+  var centerPoint = {lat: coordinates[0], lng: coordinates[1]};
+  return centerPoint;
+}

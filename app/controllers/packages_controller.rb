@@ -1,9 +1,12 @@
 class PackagesController < ApplicationController
   
   before_action :get_coordinates, only: [:finalize]
+  before_action :signed_in_charity_only, only: [:index]
 
   def index
     @packages = Package.where(package_status_id: 1)
+    # binding.pry
+    @center_point = current_user.profile.to_coordinates
     # binding.pry
     respond_to do |format|
       format.html
