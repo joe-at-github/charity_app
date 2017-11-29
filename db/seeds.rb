@@ -6,6 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+User.delete_all
+User.create! id: 1, email: "business@mail.com", role: 1, password: "businesspassword"
+
+Profile.delete_all
+Profile.create! id: 1, user_id: 1, description: "We believe in sharing.", street: "13 Fletcher drive", postcode: "L19 8BX", contact_first_name: "John", contact_last_name: "Smith", name: "The Good company", type: "BusinessProfile"
+
 PackageItem.delete_all
 Package.delete_all
 
@@ -49,7 +55,7 @@ Product.create! id: 32, name: "Heat pad", category: "Else", image: "Heat pad.jpg
 Product.create! id: 33, name: "Towel", category: "Else", image: "Towel.jpg"
 Product.create! id: 34, name: "Blanket", category: "Else", image: "Blanket.jpg"
 Product.create! id: 35, name: "Feminine hygiene products", category: "Else", image: "Feminine hygiene products.jpg"
-Product.create! id: 36, name: "Tooth brush", category: "Else", image: "Tooth brush.jpg"
+Product.create! id: 36, name: "Toothbrush", category: "Else", image: "Toothbrush.jpg"
 Product.create! id: 37, name: "Pack of baby wipes", category: "Else", image: "Pack of baby wipes.jpg"
 Product.create! id: 38, name: "Phone charger", category: "Else", image: "Phone charger.jpg"
 Product.create! id: 39, name: "Underwear (male)", category: "Else", image: "Underwear (male).jpg"
