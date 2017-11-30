@@ -14,7 +14,6 @@ class ProfilesController < ApplicationController
     else current_user.role == 1
       @profile.update(type: "BusinessProfile")
     end
-    # @profile.save  
     redirect_to profile_path(@profile)
   end
 
