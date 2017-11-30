@@ -9,9 +9,11 @@
 
   <div id="add-product-form">
   </div>
+
 </div>
 
 <h3 class="centered-text">Products needed by charities</h3>
+
 <div class="centered-text">
   <%= link_to "All", products_path  %>
   <%= link_to "Food", products_path(category: "Food"), method: :get  %>
@@ -20,7 +22,6 @@
 
 <div class="product-wrapper">
   <% @products.each do |product| %>
-
 
   <div class="product-box centered-text" >
     <%= link_to(image_tag("products/#{product.name}.jpg", class: "product-links"), package_item_form_products_path(product_id: product.id), remote: true) %>

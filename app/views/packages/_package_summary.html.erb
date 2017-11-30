@@ -1,31 +1,13 @@
-<h3>
-  Package summary
+<h3>Package summary</h3>
 
-</h3>
 <% unless current_package.id.nil? %>
-<p>
-  Package number: <%= current_package.id %>
-</p>
 
-<p>
-  Package status: <%= current_package.package_status.name %>
-</p>
-
-<p>
-  Number of items: <%= current_package.package_items.count %>
-</p>
-
-
-
+<p>Package number: <%= current_package.id %></p>
+<p>Package status: <%= current_package.package_status.name %></p>
+<p>Number of items: <%= current_package.package_items.count %></p>
 
 <% else %>
 
 <p>Start creating a package by selecting a product !</p>
 
-
 <% end %>
-   
-
-   
-
-

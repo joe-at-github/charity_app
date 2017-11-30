@@ -15,20 +15,15 @@ class PackagesController < ApplicationController
   end
 
   def show
-    # binding.pry
    @package_items = current_package.package_items
-   # @package = Package.find(params[:package_id])
    @package = Package.find(params[:id])
   end
 
   def edit
-    # legacy
-    @package = current_package
     @package_items = current_package.package_items
   end
 
   def update
-    @package = current_package
     @package.update_attributes(package_params)
     flash[:notice] = "Package successfully updated"
     redirect_to edit_package_path

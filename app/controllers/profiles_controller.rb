@@ -17,10 +17,6 @@ class ProfilesController < ApplicationController
     redirect_to profile_path(@profile)
   end
 
-  def edit
-    
-  end
-
   def show
     @profile = current_user.profile
   end
