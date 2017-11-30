@@ -25,14 +25,31 @@ function getMarkersCoordinates(map) {
   }
 } 
 
-function drawMarker(markersCoordinates, map) {  
+function drawMarker(markersCoordinates, map) { 
+  
+  var infoWindow = new google.maps.InfoWindow(), marker, i;
+
   for (var i = 0; i < markersCoordinates.length; i++) {
-      var pickup = markersCoordinates[i];
-      var marker = new google.maps.Marker({
-        position: {lat: pickup.latitude, lng: pickup.longitude},
-        map: map,
-        title: pickup[0]
-      });
+    var pickup = markersCoordinates[i];
+    var index = ( i +1 ).toString();
+    var marker = new google.maps.Marker({
+      position: {lat: pickup.latitude, lng: pickup.longitude},
+      animation: google.maps.Animation.DROP,
+      map: map,
+      label: index
+    });
+
+    google.maps.event.addListener(marker, 'click', (function(marker, i) {
+      
+      var latitude = markersCoordinates[i].latitude.toString();
+      var longitude = markersCoordinates[i].longitude.toString();
+
+      return function() {
+          infoWindow.setContent(latitude + ", " + longitude);
+          infoWindow.open(map, marker);
+      }
+    })(marker, i)); 
+
   }
 }
 

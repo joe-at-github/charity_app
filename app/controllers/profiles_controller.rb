@@ -1,7 +1,7 @@
 class ProfilesController < ApplicationController
 
   before_action :find_account, only: [:new, :edit, :update]
-  before_action :find_profile, only: [:edit, :update]
+  before_action :find_profile, :current_user_only, only: [:edit, :update]
 
   def new
     @profile = Profile.new

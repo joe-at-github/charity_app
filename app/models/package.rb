@@ -16,7 +16,6 @@ class Package < ApplicationRecord
   # end
 
   # def set_business_profile_id
-  #   binding.pry
   #   self.business_profile_id = current_user.profile.id
   # end
 

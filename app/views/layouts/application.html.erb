@@ -3,6 +3,7 @@
   <head>
     <title>CharityApp</title>
     <%= csrf_meta_tags %>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
 
     <%= stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Open+Sans', media: 'all' %>
     <%= javascript_include_tag 'application' %>
@@ -23,6 +24,11 @@
       </nav>
     </div>
 
+      <% unless flash.empty? %>
+        <div class="notice"><%= flash[:notice] %></div>
+        <div class="alert"><%= flash[:alert] %></div>
+      <% end %>
+      
       <% if current_user %>
         <% if current_user.profile.nil? %>
           <%= render partial: 'profiles/no_profile_nav' %>
@@ -31,8 +37,6 @@
         <% end %>
       <% end %>
 
-      <span class="notice"><%= flash[:notice] %></span>
-      <span class="alert"><%= flash[:alert] %></span>
 
     <%= yield %>
 
