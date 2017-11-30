@@ -49,7 +49,11 @@ class PackagesController < ApplicationController
 
   private
   def package_params
-    params.require(:package).permit(:id, :available_from, :available_until, :package_items_attributes => [:id, :quantity, :expiration_date])
+    params.require(:package).permit(
+      :id, 
+      :available_from, 
+      :available_until, 
+      :package_items_attributes => [:id, :quantity, :expiration_date])
   end
 
   def get_coordinates

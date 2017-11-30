@@ -1,6 +1,5 @@
 class BusinessProfile < Profile
   
-  # wip
   has_many :packages
 
   def self.model_name
