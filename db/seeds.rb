@@ -7,20 +7,33 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.delete_all
-User.create! id: 1, email: "business1@mail.com", role: 1, password: "business1password"
-User.create! id: 2, email: "business2@mail.com", role: 1, password: "business2password"
-User.create! id: 3, email: "business3@mail.com", role: 1, password: "business3password"
-User.create! id: 4, email: "charity@mail.com", role: 0, password: "charitypassword"
+User.create! id: 1, email: "business1@mail.com", role: 1, password: "b1password"
+User.create! id: 2, email: "business2@mail.com", role: 1, password: "b2password"
+User.create! id: 3, email: "business3@mail.com", role: 1, password: "b3password"
+User.create! id: 4, email: "business4@mail.com", role: 1, password: "b4password"
+User.create! id: 5, email: "business5@mail.com", role: 1, password: "b5password"
+User.create! id: 6, email: "business6@mail.com", role: 1, password: "b6password"
+User.create! id: 7, email: "business7@mail.com", role: 1, password: "b7password"
+User.create! id: 8, email: "business8@mail.com", role: 1, password: "b8password"
+User.create! id: 9, email: "business9@mail.com", role: 1, password: "b9password"
+User.create! id: 10, email: "business10@mail.com", role: 1, password: "b10password"
+User.create! id: 11, email: "charity@mail.com", role: 0, password: "charitypassword"
 
 Profile.delete_all
 Profile.create! id: 1, user_id: 1, description: "We believe in sharing.", street: "640 High Rd", postcode: "E11 3AA", contact_first_name: "John", contact_last_name: "Stewart", name: "The Good Company", type: "BusinessProfile", latitude: 51.5679329, longitude: 0.0110347
 Profile.create! id: 2, user_id: 2, description: "We believe in sharing too.", street: "High Road,", postcode: "E11 4RE", contact_first_name: "Trevor", contact_last_name: "Noah", name: "The Even Nicer Company", type: "BusinessProfile", latitude: 51.5639009, longitude: 0.0096186
-Profile.create! id: 3, user_id: 3, description: "We believe in sharing too.", street: "118B Hainault Road,", postcode: "E11 1EL", contact_first_name: "Mike", contact_last_name: "Griffin", name: "The Genuine Company", type: "BusinessProfile", latitude: 51.571685, longitude: 0.001622
-Profile.create! id: 4, user_id: 4, description: "We like people who share.", street: "The Green", postcode: "E11 2NT", contact_first_name: "Stephen", contact_last_name: "Colbert", name: "A Great Charity", type: "CharityProfile", latitude: 51.574984, longitude:0.028706
+Profile.create! id: 3, user_id: 3, description: "We believe in sharing too.", street: "118B Hainault Road", postcode: "E11 1EL", contact_first_name: "Robert", contact_last_name: "Duval", name: "The Genuine Company", type: "BusinessProfile", latitude: 51.583144, longitude: 0.020697829
+Profile.create! id: 4, user_id: 4, description: "We believe in sharing too.", street: "73 Hollybush Hill", postcode: "E11 1PE", contact_first_name: "Franck", contact_last_name: "Griffin", name: "Supertore Ltd", type: "BusinessProfile", latitude: 51.576367, longitude: 0.045394047
+Profile.create! id: 5, user_id: 5, description: "We believe in sharing too.", street: "Eastern Ave", postcode: "IG4 5DQ", contact_first_name: "Jeff", contact_last_name: "Bridges", name: "Business ltd", type: "BusinessProfile", latitude: 51.571469, longitude: 0.034870575
+Profile.create! id: 6, user_id: 6, description: "We believe in sharing too.", street: "Overton Dr", postcode: "E11 2LW", contact_first_name: "Loic", contact_last_name: "Lemeur", name: "Food Supplies inc.", type: "BusinessProfile", latitude: 51.578306, longitude: 0.0028606243
+Profile.create! id: 7, user_id: 7, description: "We believe in sharing too.", street: "Whipps Cross Rd", postcode: "E11 1NR", contact_first_name: "Benjamin", contact_last_name: "Hornsby", name: "Fair Trade Business", type: "BusinessProfile", latitude: 51.571246, longitude: -0.0082293829
+Profile.create! id: 8, user_id: 8, description: "We believe in sharing too.", street: "676-682 High Rd Leyton", postcode: "E10 6JP", contact_first_name: "Francesco", contact_last_name: "Mariani", name: "Buy Smart", type: "BusinessProfile", latitude: 51.591741, longitude: 0.064073464
+Profile.create! id: 9, user_id: 9, description: "We believe in sharing too.", street: "237 Clayhall Ave", postcode: "IG5 0NY", contact_first_name: "Jose", contact_last_name: "Canalejo", name: "SellFood inc.", type: "BusinessProfile", latitude: 51.564572, longitude: 0.055989143
+Profile.create! id: 10, user_id: 10, description: "We believe in sharing too.", street: "291 Wanstead Park Rd", postcode: "IG1 3TR", contact_first_name: "Joe", contact_last_name: "Blog", name: "Food and Supplies ltd", type: "BusinessProfile", latitude: 51.574984, longitude: 0.028706394
+Profile.create! id: 11, user_id: 11, description: "We like people who share.", street: "The Green", postcode: "E11 2NT", contact_first_name: "Stephen", contact_last_name: "Colbert", name: "A Great Charity", type: "CharityProfile", latitude: 51.574984, longitude:0.028706
 
 PackageItem.delete_all
 Package.delete_all
-# Package.create! id:1, package_status_id: 1, available_from: "2017-12-01", available_until: "2017-12-23", business_profile_id: 1
 
 PackageStatus.delete_all
 PackageStatus.create! id: 1, name: "Available"
