@@ -24,7 +24,7 @@ class PackagesController < ApplicationController
   end
 
   def update
-    @package.update_attributes(package_params)
+    current_package.update_attributes(package_params)
     flash[:notice] = "Package successfully updated"
     redirect_to edit_package_path
   end

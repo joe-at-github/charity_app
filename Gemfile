@@ -44,4 +44,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 group :test do
   gem 'rspec-expectations'
   gem 'rack_session_access'
+  gem 'simplecov', :require => false, :group => :test
 end
