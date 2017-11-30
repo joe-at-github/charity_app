@@ -55,7 +55,13 @@ end
 When("they submit modification to the package") do
   fill_in 'Expiration date', with: '2019-02-01'
   fill_in 'Quantity', with: 500
+  fill_in 'Available from', with: "2018-01-10"
+  fill_in 'Available until', with: "2018-01-20"
   click_button 'Update'
+end
+
+When("click finalize") do
+  click_link 'Finalize'
 end
 
 Then("the package is updated") do
@@ -63,7 +69,6 @@ Then("the package is updated") do
 end
 
 Then("they are redicted to their business profile page") do
-  save_and_open_page
   expect(page).to have_content(@business.profile.name)
   expect(page).to have_content('Chocolate bar')
 end

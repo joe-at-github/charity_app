@@ -22,5 +22,6 @@ Feature: A business can create a package
       And click Review and finalize
       And edit the review package form
     When they submit modification to the package
+      And click finalize
     Then the package is updated
       And they are redicted to their business profile page
