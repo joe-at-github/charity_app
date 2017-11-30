@@ -5,7 +5,9 @@ class PackagesController < ApplicationController
 
   def index
     @packages = Package.where(package_status_id: 1)
-    @center_point = current_user.profile.to_coordinates
+    @user_information = current_user.profile.to_coordinates 
+    @user_information.push(current_user.id)
+
     respond_to do |format|
       format.html
       format.json { render :json => @packages.where("latitude is not null AND longitude is not null").as_json(:only => [:id, :latitude, :longitude]) }
@@ -13,8 +15,10 @@ class PackagesController < ApplicationController
   end
 
   def show
+    # binding.pry
    @package_items = current_package.package_items
-   @package = Package.find(params[:package_id])
+   # @package = Package.find(params[:package_id])
+   @package = Package.find(params[:id])
   end
 
   def edit

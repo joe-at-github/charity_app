@@ -20,6 +20,7 @@ function getMarkersCoordinates(map) {
   myRequest.onreadystatechange = function () { 
     if (myRequest.readyState === 4) {
       var markersCoordinates = JSON.parse(myRequest.responseText)
+      changeIdKey(markersCoordinates)
       drawMarker(markersCoordinates, map);
     }
   }
@@ -43,9 +44,11 @@ function drawMarker(markersCoordinates, map) {
       
       var latitude = markersCoordinates[i].latitude.toString();
       var longitude = markersCoordinates[i].longitude.toString();
+      var packageId = markersCoordinates[i].packageId.toString();
+      var link = "<a href=http://localhost:3000/packages/"+ packageId + "> Package information </a>"
 
       return function() {
-          infoWindow.setContent(latitude + ", " + longitude);
+          infoWindow.setContent(link);
           infoWindow.open(map, marker);
       }
     })(marker, i)); 
@@ -54,7 +57,14 @@ function drawMarker(markersCoordinates, map) {
 }
 
 function setCenterPoint() {
-  var coordinates = JSON.parse(document.getElementById('center-point').innerHTML);
-  var centerPoint = {lat: coordinates[0], lng: coordinates[1]};
+  var user_info = JSON.parse(document.getElementById('center-point').innerHTML);
+  var centerPoint = {lat: user_info[0], lng: user_info[1]};
   return centerPoint;
+}
+
+function changeIdKey(markersCoordinates) {
+  for (var i = 0; i < markersCoordinates.length; i++) {
+    markersCoordinates[i].packageId = markersCoordinates[i].id;
+    delete markersCoordinates[i].id;
+  }
 }

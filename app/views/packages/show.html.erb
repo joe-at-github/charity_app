@@ -17,5 +17,18 @@
 </ul>
 
 <% end %>
+
+<% if current_user.profile.type == "CharityProfile" %>
+  <div> 
+    <h3>Contact information</h3>
+    <h4><%= @package.business_profile.name %></h4>
+
+    <%= @package.business_profile.street %>
+    <%= @package.business_profile.postcode %>
+  </br>
+    <%= @package.business_profile.contact_first_name %>
+    <%= @package.business_profile.contact_last_name %>
+  </div>
+<% end %>
     
 

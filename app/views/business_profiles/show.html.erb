@@ -10,7 +10,8 @@
     <tbody>
       <% @packages.each do |p| %>
         <tr>
-          <td> <%= link_to p.id, package_path(package_id:p.id) %> </td>
+          <td> <%= link_to p.id, package_path(id:p.id) %> </td>
+
           <td> <%= p.package_items.count %> </td>
           
           <td><%= p.package_status.name %></td>
